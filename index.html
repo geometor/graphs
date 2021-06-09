@@ -1,9 +1,11 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>D3 Graph Test</title>
+  <title>DoG:1</title>
   <!-- <script src="https://d3js.org/d3.v6.js"></script> -->
   <script src="./d3/d3.js"></script>
+  <script src="./data/graphs.js" ></script>
+  <script src="./js/render.js" ></script>
   <script src="./index.js" defer></script>
   <style>
 body {
@@ -11,7 +13,7 @@ body {
 }
 circle {
   fill: #C90;
-  stroke: #888;
+  stroke: black;
   stroke-width: 3;
 }
 line {
@@ -25,6 +27,7 @@ line {
   </style>
 </head>
 <body>
- <div id="data"></div> 
+ <div id="graph"></div> 
+ <div id="chart"></div> 
 </body>
 </html>

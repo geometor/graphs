@@ -1,71 +1,54 @@
+var g = graphs.simple
 
-// set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 40},
-  width = 400 - margin.left - margin.right,
-  height = 400 - margin.top - margin.bottom;
+setNeighbors()
+setGraph()
+renderGraph(g)
 
-// append the svg object to the body of the page
-var svg = d3.select("#data")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+console.log(population())
+for(var i=0; i < 100; i++) {
+  randomMutate()
+}
+console.log(g)
 
-d3.json("./data/dog.json").then( (data) => {
+function setNeighbors() {
+  g.E.forEach( e => {
+    let v0 = e[0], v1 = e[1]
+    if( !g.V[v0].neighbors ) {
+      g.V[v0].neighbors = []
+    }
+    if( !g.V[v1].neighbors ) {
+      g.V[v1].neighbors = []
+    }
+    g.V[v0].neighbors.push(g.V[v1])
+    g.V[v1].neighbors.push(g.V[v0])
+  })
+}
 
-  // Initialize the links
-  var link = svg
-    .selectAll("line")
-    .data(data.links)
-    .enter()
-    .append("line")
+function sumNeighbors(sum, v) {
+  return sum + v.value;
+}
 
-  // Initialize the nodes
-  var node = svg
-    .selectAll("circle")
-    .data(data.nodes)
-    .enter()
-    .append("circle")
-      .attr("r", 20)
-  
-  var label = svg.append("g")
-      .selectAll("text")
-      .data(data.nodes)
-      .enter().append("text")
-        .attr("class", "label")
-        .attr("text-anchor", "middle")
-        .attr("dy", "5")
-        .text((d) => d.name );
-  
-  // Let's list the force we wanna apply on the network
-  var simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
-      .force("link", d3.forceLink()                               // This force provides links between nodes
-            .id((d) => d.id)                     // This provide  the id of a node
-            .links(data.links)                                    // and this the list of links
-      )
-      .force("charge", d3.forceManyBody().strength(-400))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
-      .force("center", d3.forceCenter(width / 2, height / 2))     // This force attracts nodes to the center of the svg area
-      .on("end", ticked);
+function population() {
+  return Object.values(g.V).map( v => v.value )
+}
 
-  // This function is run at each iteration of the force algorithm, updating the nodes position.
-  function ticked() {
-    link
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
+function randomMutate() {
+  keys = Object.keys(g.V)
+  let n = Math.floor((Math.random() * keys.length) + 1) - 1
+  v = g.V[keys[n]]
+  console.log("mutate " + keys[n])
+  mutate(v)
+}
 
-    node
-         .attr("cx", function (d) { return d.x+0; })
-         .attr("cy", function(d) { return d.y-0; });
-    label
-        .attr("x", function(d) { return d.x; })
-        .attr("y", function (d) { return d.y; })
-  }
+function mutate(v) {
+  v.value = -v.value
+  v.value += v.neighbors.reduce(sumNeighbors, 0)
+  console.log(population())
+}
 
-});
+function main() {
 
 
 
+
+}
