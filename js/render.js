@@ -46,7 +46,7 @@ function renderGraph(g) {
     .enter().append("text")
     .attr("class", "label")
     .attr("text-anchor", "middle")
-    .attr("dy", "5")
+    .attr("dy", "3")
     .text( d => d.id );
 
   simulation = d3.forceSimulation(gNodes)                 
