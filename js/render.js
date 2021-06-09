@@ -1,11 +1,12 @@
 var graph
+var chart
 var nodes
 var links
 var labels
 var simulation
 var margin = {top: 10, right: 30, bottom: 30, left: 40},
   width = 400 - margin.left - margin.right,
-  height = 400 - margin.top - margin.bottom;
+  height = 200 - margin.top - margin.bottom;
 
 function setGraph() {
   // set the dimensions and margins of the graph
@@ -55,7 +56,7 @@ function renderGraph(g) {
     )
     .force("charge", d3.forceManyBody().strength(-400))        
     .force("center", d3.forceCenter(width / 2, height / 2))   
-    .on("end", ticked);
+    .on("tick", ticked);
 }
 
 function ticked() {
@@ -72,4 +73,36 @@ function ticked() {
   labels
     .attr("x", d => d.x )
     .attr("y", d => d.y )
+}
+
+function setTable() {
+  // set the dimensions and margins of the graph
+
+  // append the svg object to the body of the page
+  table = d3.select("#table").append("table")
+} 
+
+function renderTable(c) {
+  // var thead = table.append('thead')
+  var	tbody = table.append('tbody');
+
+  // append the header row
+  // thead.append('tr')
+    // .selectAll('th')
+    // .data(columns).enter()
+    // .append('th')
+    // .text(function (column) { return column; });
+
+  // create a row for each object in the data
+  var rows = tbody.selectAll('tr')
+    .data(c)
+    .enter()
+    .append('tr');
+
+  // create a cell in each row for each column
+  var cells = rows.selectAll('td')
+    .data(d => d)
+    .enter()
+    .append('td')
+    .text(d => d);
 }

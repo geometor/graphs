@@ -5,11 +5,14 @@
   <!-- <script src="https://d3js.org/d3.v6.js"></script> -->
   <script src="./d3/d3.js"></script>
   <script src="./data/graphs.js" ></script>
+  <script src="./js/mutate.js" ></script>
   <script src="./js/render.js" ></script>
   <script src="./index.js" defer></script>
   <style>
 body {
   background: black;
+  color: white;
+  font-family: 'Fira Sans Condensed';
 }
 circle {
   fill: #C90;
@@ -24,10 +27,17 @@ line {
   fill: black;
   font-family: 'Fira Sans Condensed';
 }
+table {
+  width: 400px;
+}
+td {
+  background: #111;
+  text-align: center;
+}
   </style>
 </head>
 <body>
  <div id="graph"></div> 
- <div id="chart"></div> 
+ <div id="table"></div> 
 </body>
 </html>
