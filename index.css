@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: monospace;
+  padding: .5em;
+}
+
+.vertices {
+  fill: #C90;
+  stroke: black;
+  stroke-width: 3;
+}
+
+.vertices .focus {
+  stroke: #C90;
+  fill: black;
+}
+
+.edges {
+  stroke: #888;
+  stroke-width: 3;
+}
+
+.labels {
+  fill: #000;
+  font-family: monospace;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.labels .focus {
+  fill: #C90;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background: #c90;
+  color: #000;
+  text-align: center;
+}
+
+td {
+  background: #111;
+  text-align: center;
+}
+
+
+@media (min-width: 36em) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: " header " " main " " footer ";
+    grid-template-rows: 4em 1fr 4em;
+  }
+  body > header {
+    grid-area: header;
+    padding: .5em;
+  }
+  body > main {
+    grid-area: main;
+  }
+  body > footer {
+    grid-area: footer;
+    padding: .5em;
+  }
+  main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: " graph plot " " table code ";
+    grid-template-rows: 1fr 40vh;
+    grid-template-columns: 1fr 1fr;
+  }
+  main > * {
+    /* padding: .5em; */
+  }
+
+  main > #graph {
+    grid-area: graph;
+  }
+  main > #code {
+    grid-area: code;
+    overflow: scroll;
+  }
+  main > #table {
+    grid-area: table;
+    overflow: scroll;
+  }
+  main > #plot {
+    grid-area: plot;
+    width: 100%;
+  }
+}

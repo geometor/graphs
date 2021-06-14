@@ -1,44 +1,32 @@
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>DoG:1</title>
-  <!-- <script src="https://d3js.org/d3.v6.js"></script> -->
-  <script src="./d3/d3.js"></script>
-  <script src="./data/graphs.js" ></script>
-  <script src="./js/mutate.js" ></script>
-  <script src="./js/render.js" ></script>
-  <script src="./index.js" defer></script>
-  <style>
-body {
-  background: black;
-  color: white;
-  font-family: monospace;
-}
-circle {
-  fill: #C90;
-  stroke: black;
-  stroke-width: 3;
-}
-line {
-  stroke: #888;
-  stroke-width: 3;
-}
-.label {
-  fill: black;
-  font-family: monospace;
-  font-weight: bold;
-}
-table {
-  width: 400px;
-}
-td {
-  background: #111;
-  text-align: center;
-}
-  </style>
-</head>
-<body>
- <div id="graph"></div> 
- <div id="table"></div> 
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>DoG:1</title>
+    <!-- <script src="https://d3js.org/d3.v6.js"></script> -->
+    <link href="index.css" type="text/css" rel="stylesheet">
+
+    <script src="./d3/d3.js"></script>
+    <script src="./js/graphs.js" ></script>
+    <script src="./js/mutate.js" ></script>
+    <script src="./js/tools/graph.js" ></script>
+    <script src="./js/tools/table.js" ></script>
+    <script src="./js/tools/plot.js" ></script>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="https://geometor.com" target="_blank">GEOMETOR</a></h1>
+    </header>
+    <main>
+      <div id="graph"></div> 
+      <div id="plot"></div>
+      <div id="table"></div> 
+      <div id="code"></div>
+    </main>
+    <footer>
+      <p>
+      Foundational studies for the Dynamics on Graphs lecture of Norman J Wildberger, PHD
+      </p>
+    </footer>
+  </body>
 </html>

@@ -3,7 +3,6 @@ var nodes
 var links
 var labels
 
-var table, thead, tbody
 
 var simulation
 var margin = {top: 10, right: 30, bottom: 30, left: 40},

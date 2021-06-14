@@ -12,6 +12,7 @@ const graphs = {
       [ "c", "a" ],
     ]
   },
+
   simple: {
     V: { 
       x: { value: 1 },
