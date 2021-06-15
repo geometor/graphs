@@ -6,7 +6,8 @@
 function Plot(pid, d) {
   const inset = 20  
   const parent = d3.select(pid)
-  const width = parent.node().getBoundingClientRect().width
+  parent.node().innerHTML = ''
+  const width = parent.node().getBoundingClientRect().width 
   console.log(width)
   const height = parent.node().getBoundingClientRect().height
   const plotWidth = width - (2 * inset)
@@ -47,7 +48,7 @@ function Plot(pid, d) {
 
   const yScale = d3.scaleBand()
     .domain(data.keys())
-    .range([plotHeight, inset])
+    .range([plotHeight, 0])
   console.log("yScale(0): " + yScale(0))
 
   const pins = plot.append("g").classed("pins", true)

@@ -1,13 +1,14 @@
 
 var table, thead, tbody
 
-
-
 function setTable() {
+  let g = graphs[G]
   // set the dimensions and margins of the graph
 
   // append the svg object to the body of the page
-  table = d3.select("#table").append("table")
+  var parent = d3.select("#table")
+  parent.node().innerHTML = ''
+  table = parent.append("table")
   thead = table.append('thead')
   var gKeys = Object.keys(g.V)
   thead.append('tr')

@@ -10,6 +10,14 @@ body {
   padding: .5em;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header > div > * {
+  margin-left: 1em;
+}
+
 .vertices {
   fill: #C90;
   stroke: black;
@@ -39,6 +47,7 @@ body {
 
 table {
   width: 100%;
+  font-size: .8em;
 }
 
 th {
@@ -52,11 +61,15 @@ td {
   text-align: center;
 }
 
+button,select {
+  /* background: #c90; */
+  /* background-color: #c90; */
+}
 
 @media (min-width: 36em) {
   body {
-    width: 100vw;
-    height: 100vh;
+    width: 98vw;
+    height: 98vh;
     display: grid;
     grid-template-areas: " header " " main " " footer ";
     grid-template-rows: 4em 1fr 4em;
@@ -81,19 +94,20 @@ td {
     grid-template-columns: 1fr 1fr;
   }
   main > * {
-    /* padding: .5em; */
   }
 
   main > #graph {
     grid-area: graph;
   }
   main > #code {
+    padding: 10px;
     grid-area: code;
-    overflow: scroll;
+    overflow: auto;
   }
   main > #table {
+    padding: 10px;
     grid-area: table;
-    overflow: scroll;
+    overflow: auto;
   }
   main > #plot {
     grid-area: plot;
