@@ -55,6 +55,7 @@ At each iteration, the population is added to a history array which is then disp
 
 The points on the plot show the sum of the population at each iteration. 
 
+![screenshot DoG1](DoG-01-E6.png "screenshot of DoG1")
 ##Next steps
 - Determine the set of root populations
 - Determine min-max sum of populations
