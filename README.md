@@ -9,7 +9,7 @@ The first exercise on the mutation game can be found here:
 [DoG 1: The Mutation Game and a foundational exercise / challenge | Explore Research Maths | Wild Egg](https://www.youtube.com/watch?v=u7cUXZHZHEE)
 
 ## DoG:1
-### mutation game exercise
+### Mutation Explorer for Simple Graphs
 
 ![screenshot DoG1](DoG-01-E6.png "screenshot of DoG1")
 
