@@ -19,10 +19,16 @@
     <header>
       <h1>Mutation Game</h1>
       <div>
+        <label for="mode">mode:</label>
+        <select name="mode" id="mode">
+          <option value="random">random</option>
+          <option value="round">round</option>
+        </select>
         <label for="graphs">graphs:</label>
-        <select name="graphs" id="graphs" />
+        <select name="graphs" id="graphs"></select>
+        
         <label for="cycles">cycles:</label>
-        <input name="cycles" id="cycles" />
+        <input type="text" name="cycles" id="cycles">
         <button id="run">run</button>
       </div>
     </header>

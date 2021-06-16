@@ -4,9 +4,7 @@ var populations = []
 // .N = {}
 function setNeighbors() {
   var keys = Object.keys(graphs)
-  console.log(keys)
   keys.forEach( key => {
-    console.log(key)
     let g = graphs[key]
     g.E.forEach( e => {
       let v0 = g.V[e[0]]
@@ -37,9 +35,6 @@ function sRandom() {
   v = g.V[keys[n]]
 
   s(v)
-
-  var lastpop = populations[populations.length-1]
-  console.log( keys[n] + " : " + lastpop.toString() )
 }
 
 // mutation function

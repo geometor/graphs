@@ -30,10 +30,19 @@ function run() {
   
   let graph = new Graph("#graph")
 
+  let mode = d3.select("#mode").node().value
   let cycles = d3.select("#cycles").node().value
   console.log("cycles: " + cycles)
   for(var i=0; i < cycles; i++) {
-    sRandom()
+    switch (mode) {
+      case "random":
+        sRandom()
+        break;
+      case "round":
+        let k = gKeys[i % gKeys.length]
+        s(g.V[k])
+        break;
+    }
   }
 
   let table = new Table("#table", populations)
@@ -41,7 +50,7 @@ function run() {
   const sumPop = populations.map( row => row.reduce( (tot, val) => tot + val ))
   let plot = new Plot("#plot", sumPop)
 
-  Code("#code")
+  let code = new Code("#code")
 }
 
 function setGraphSelect() {

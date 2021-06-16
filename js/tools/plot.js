@@ -9,7 +9,6 @@ function Plot(pid, d) {
   const parent = d3.select(pid)
   parent.node().innerHTML = ''
   const width = parent.node().getBoundingClientRect().width 
-  console.log(width)
   const height = parent.node().getBoundingClientRect().height
   const plotWidth = width - (2 * inset)
   const plotHeight = height - (2 * inset)
@@ -27,12 +26,10 @@ function Plot(pid, d) {
   const xExtents = d3.extent(data)
   xExtents[0] -= 1
   xExtents[1] += 1
-  console.log(xExtents)
 
   const xScale = d3.scaleLinear()
     .domain(xExtents).nice()
     .range([0, plotWidth])
-  console.log("xScale(0): " + xScale(0))
 
   const axisX = plot.append("g").classed("axis x", true)
     .attr("transform", `translate(0,${plotHeight})`)
@@ -47,7 +44,6 @@ function Plot(pid, d) {
   const yScale = d3.scaleBand()
     .domain(data.keys())
     .range([plotHeight, 0])
-  console.log("yScale(0): " + yScale(0))
 
   const pins = plot.append("g").classed("pins", true)
     .selectAll("circle")
