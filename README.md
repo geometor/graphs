@@ -11,6 +11,8 @@ The first exercise on the mutation game can be found here:
 ## DoG:1
 ### mutation game exercise
 
+![screenshot DoG1](DoG-01-E6.png "screenshot of DoG1")
+
 In the video linked above, Dr. Wildberger discusses the mutation game on graphs and presents the following exercise / challenge:
 
 > Which simple graphs `X` have a finite number of root populations?
@@ -55,7 +57,6 @@ At each iteration, the population is added to a history array which is then disp
 
 The points on the plot show the sum of the population at each iteration. 
 
-![screenshot DoG1](DoG-01-E6.png "screenshot of DoG1")
 ##Next steps
 - Determine the set of root populations
 - Determine min-max sum of populations

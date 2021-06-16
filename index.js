@@ -4,15 +4,16 @@ const loops = 100
 main()
 
 function main() {
-  setGraphSelect()
   setNeighbors()
 
-  let select = d3.select("#run")
-  select
-    .on("click", () => { run() });
+  setGraphSelect()
 
-  let cycles = d3.select("#cycles")
-  cycles.node().value = loops
+  d3.select("#run").on("click", run );
+
+  d3.select("#cycles").node().value = loops
+  d3.select("#cycles").on("change", run )
+
+  d3.select("#mode").on("change", run )
 
   run()
 }
@@ -32,7 +33,6 @@ function run() {
 
   let mode = d3.select("#mode").node().value
   let cycles = d3.select("#cycles").node().value
-  console.log("cycles: " + cycles)
   for(var i=0; i < cycles; i++) {
     switch (mode) {
       case "random":
