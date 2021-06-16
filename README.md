@@ -31,7 +31,7 @@ D3 is handling the rendering of the graph (upper-left), the population history t
 
 Each graph is defined as a simple JS structure of vertices `V` and edges `E` 
 
-```
+```javascript
 simple: {
   V: {
     x: {},
@@ -57,7 +57,7 @@ At each iteration, the population is added to a history array which is then disp
 
 The points on the plot show the sum of the population at each iteration. 
 
-##Next steps
+## Next steps
 - Determine the set of root populations
 - Determine min-max sum of populations
 - Plot vertex values
