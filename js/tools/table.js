@@ -1,15 +1,17 @@
-
-var table, thead, tbody
-
-function setTable() {
+/**
+ * set d3 table
+ *
+ * @param {string} pid - css selector for parent element
+ * @param {string} data - 2 dimensional array
+ */
+function Table(pid, data) {
   let g = graphs[G]
-  // set the dimensions and margins of the graph
 
-  // append the svg object to the body of the page
   var parent = d3.select("#table")
   parent.node().innerHTML = ''
-  table = parent.append("table")
-  thead = table.append('thead')
+
+  const table = parent.append("table")
+  const thead = table.append('thead')
   var gKeys = Object.keys(g.V)
   thead.append('tr')
     .selectAll('th')
@@ -17,13 +19,10 @@ function setTable() {
     .enter()
     .append('th')
     .text(d => d);
-  tbody = table.append('tbody');
-} 
-
-function renderTable(c) {
+  const tbody = table.append('tbody');
 
   var rows = tbody.selectAll('tr')
-    .data(c)
+    .data(data)
     .enter()
     .insert('tr', ":first-child");
 

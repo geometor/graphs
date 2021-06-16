@@ -1,4 +1,5 @@
 /**
+ * set d3 plot
  *
  * @param {str} pid - css selector string
  * @param {Array} d - an array of data values
@@ -24,9 +25,8 @@ function Plot(pid, d) {
     .attr("transform", `translate(${inset},${inset})`)
 
   const xExtents = d3.extent(data)
-  // console.log(xExtents)
-  // xExtents[0] -= 1
-  // xExtents[1] += 1
+  xExtents[0] -= 1
+  xExtents[1] += 1
   console.log(xExtents)
 
   const xScale = d3.scaleLinear()
@@ -37,8 +37,6 @@ function Plot(pid, d) {
   const axisX = plot.append("g").classed("axis x", true)
     .attr("transform", `translate(0,${plotHeight})`)
     .call(d3.axisBottom(xScale).ticks(5))
-    // .call(xAxis);
-
 
   // var axisY = svg.append("g").classed("axis y", true)
     // .call(yAxis);
@@ -59,34 +57,5 @@ function Plot(pid, d) {
     .attr("cx", d => xScale(d))
     .attr("cy", (d, i) => yScale(i))
     .attr("fill", "white")
-    // .attr("fill", d => color(d.category))
-    // .attr("d", d => shape(d.category));
-
-  function render() {
-
-  }
 }
 
-function xAxis(g) {
-  // g.attr("transform", `translate(0,${height - margin.bottom})`)
-    // .call(d3.axisBottom(this.xScale))
-    // .call(g => g.select(".domain").remove())
-    // .call(g => g.append("text")
-        // .attr("x", width)
-        // .attr("y", margin.bottom - 4)
-        // .attr("fill", "currentColor")
-        // .attr("text-anchor", "end")
-        // .text(data.x))
-}
-function yAxis(g) {
-  // g
-    // .attr("transform", `translate(${margin.left},0)`)
-    // .call(d3.axisLeft(y))
-    // .call(g => g.select(".domain").remove())
-    // .call(g => g.append("text")
-        // .attr("x", -margin.left)
-        // .attr("y", 10)
-        // .attr("fill", "currentColor")
-        // .attr("text-anchor", "start")
-        // .text(data.y))
-}

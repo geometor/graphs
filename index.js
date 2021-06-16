@@ -1,4 +1,4 @@
-var G = 'simple'
+var G = ''
 const loops = 100
 
 main()
@@ -10,6 +10,7 @@ function main() {
   let select = d3.select("#run")
   select
     .on("click", () => { run() });
+
   let cycles = d3.select("#cycles")
   cycles.node().value = loops
 
@@ -17,16 +18,17 @@ function main() {
 }
 
 function run() {
-  populations = []
-
   let g = graphs[G]
+
+  // reset values in vertices
   var gKeys = Object.keys(g.V)
   gKeys.forEach ( key => g.V[key].value = 0)
   g.V[gKeys[0]].value = 1    
-  //
-  let graph = new Graph("#graph")
-
+  // reset population
+  populations = []
   populations.push(p())
+  
+  let graph = new Graph("#graph")
 
   let cycles = d3.select("#cycles").node().value
   console.log("cycles: " + cycles)
@@ -34,46 +36,12 @@ function run() {
     sRandom()
   }
 
-  setTable()
-  renderTable(populations)
+  let table = new Table("#table", populations)
 
   const sumPop = populations.map( row => row.reduce( (tot, val) => tot + val ))
   let plot = new Plot("#plot", sumPop)
 
   Code("#code")
-
-}
-
-function Code(pid) {
-  // let select = d3.select("#graphs")
-  // G = select.value
-
-  let g = graphs[G]
-
-  var code = d3.select("#code")
-  code.node().innerHTML = ''
-  var pre = code.append("pre")
-  var text = `
-${G}: {
-  V: {
-`
-  // let vKeys = Object.keys(g.V)
-  // console.log(vKeys)
-  // for (var key in vKeys) {
-
-    // text += `
-      // ${ key }: { value: ${ g.V[key].value } }`
-  // }
-  text += "  }"
-  text += `
-  E: {
-`
-  text += "  }\n"
-  text += "}"
-
-  // pre.text(JSON.stringify(g, null, 2))
-  pre.text(text)
-  
 }
 
 function setGraphSelect() {

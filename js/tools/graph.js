@@ -1,25 +1,14 @@
-// var graph
-// var nodes
-// var links
-// var labels
-
-// var simulation
-// var margin = {top: 10, right: 30, bottom: 30, left: 40},
-  // width = 400 - margin.left - margin.right,
-  // height = 200 - margin.top - margin.bottom;
-
 /**
- * setup d3 graph
+ * setup d3 graph in a parent element 
  *
+ * @param {string} pid - css selector for parent element
  */
 function Graph(pid) {
   let g = graphs[G]
-  console.log("G: " + G)
   const inset = 20
   const parent = d3.select(pid)
   parent.node().innerHTML = ''
   const width = parent.node().getBoundingClientRect().width - inset
-  console.log(width)
   const height = parent.node().getBoundingClientRect().height - inset
   const plotWidth = width - (2 * inset)
   const plotHeight = height - (2 * inset)
@@ -92,36 +81,6 @@ function Graph(pid) {
       .attr("y", d => d.y )
   }
 }
-function setGraph() {
-  // set the dimensions and margins of the graph
-
-  // append the svg object to the body of the page
-  // graph = d3.select("#graph").append("svg")
-    // .attr("width", width + margin.left + margin.right)
-    // .attr("height", height + margin.top + margin.bottom)
-    // .append("g")
-    // .attr("transform",
-      // "translate(" + margin.left + "," + margin.top + ")");
-}
-
-function renderGraph(g) {
-}
-
-// function ticked() {
-  // this.links
-    // .attr("x1", d => d.source.x )
-    // .attr("y1", d => d.source.y )
-    // .attr("x2", d => d.target.x )
-    // .attr("y2", d => d.target.y );
-
-  // this.nodes
-    // .attr("cx", d => d.x+0 )
-    // .attr("cy", d => d.y-0 );
-
-  // this.labels
-    // .attr("x", d => d.x )
-    // .attr("y", d => d.y )
-// }
 
 function nodeClicked() {
   d3.select(this).classed("focus", d3.select(this).classed("focus") ? false : true);
@@ -154,33 +113,3 @@ function nodeMouseOut(d, i) {
   // d3.select("#t" + d.x + "-" + d.y + "-" + i).remove();  // Remove text location
 }
 
-function setTable() {
-  // set the dimensions and margins of the graph
-
-  // append the svg object to the body of the page
-  table = d3.select("#table").append("table")
-  thead = table.append('thead')
-  var gKeys = Object.keys(g.V)
-  thead.append('tr')
-    .selectAll('th')
-    .data(gKeys)
-    .enter()
-    .append('th')
-    .text(d => d);
-  tbody = table.append('tbody');
-}
-
-function renderTable(c) {
-
-  var rows = tbody.selectAll('tr')
-    .data(c)
-    .enter()
-    .insert('tr', ":first-child");
-
-  // create a cell in each row for each column
-  var cells = rows.selectAll('td')
-    .data(d => d)
-    .enter()
-    .append('td')
-    .text(d => d);
-}
