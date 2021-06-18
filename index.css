@@ -11,11 +11,8 @@ body {
 }
 
 header {
-  display: flex;
+  display: grid;
   justify-content: space-between;
-}
-header > div > * {
-  margin-left: 1em;
 }
 
 .vertices {
@@ -45,6 +42,11 @@ header > div > * {
   fill: #C90;
 }
 
+nav {
+  padding: 1em;
+  grid-area: nav;
+}
+
 table {
   width: 100%;
   font-size: .8em;
@@ -66,13 +68,18 @@ button,select {
   /* background-color: #c90; */
 }
 
+label {
+  color: #C90;
+  font-weight: bold;
+}
+
 @media (min-width: 36em) {
   body {
     width: 98vw;
     height: 98vh;
     display: grid;
-    grid-template-areas: " header " " main " " footer ";
-    grid-template-rows: 4em 1fr 4em;
+    grid-template-areas: " header " " nav " " main ";
+    grid-template-rows: 4em 4em 1fr;
   }
   body > header {
     grid-area: header;
@@ -90,7 +97,7 @@ button,select {
     height: 100%;
     display: grid;
     grid-template-areas: " graph plot " " table code ";
-    grid-template-rows: 1fr 40vh;
+    grid-template-rows: 1fr 30vh;
     grid-template-columns: 1fr 1fr;
   }
   main > * {
@@ -105,7 +112,7 @@ button,select {
     overflow: auto;
   }
   main > #table {
-    padding: 10px;
+    /* padding: 10px; */
     grid-area: table;
     overflow: auto;
   }

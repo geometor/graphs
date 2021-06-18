@@ -18,32 +18,31 @@
   <body>
     <header>
       <h1>Mutation Explorer</h1>
-      <div>
-        <label for="mode">mode:</label>
-        <select name="mode" id="mode">
-          <option value="random">random</option>
-          <option value="round">round</option>
-        </select>
-        <label for="graphs">graphs:</label>
-        <select name="graphs" id="graphs"></select>
-        
-        <label for="cycles">cycles:</label>
-        <input type="text" name="cycles" id="cycles">
-        <button id="run">run</button>
-      </div>
+      <p>
+      Foundational study of the Mutation Game on simple graphs
+      for the Dynamics on Graphs lecture of Norman J Wildberger, PHD
+      <a href="https://github.com/geometor/graphs" target="_blank">source</a>
+      </p> 
     </header>
+    <nav>
+      <label for="graphs">graphs:</label>
+      <select name="graphs" id="graphs" autofocus></select>
+
+      <label for="mode">mode:</label>
+      <select name="mode" id="mode">
+        <option value="random">random</option>
+        <option value="round">round</option>
+      </select>
+
+      <label for="cycles">cycles:</label>
+      <input type="text" name="cycles" id="cycles">
+      <button id="run">run</button>
+    </nav> 
     <main>
       <div id="graph"></div> 
       <div id="plot"></div>
       <div id="table"></div> 
       <div id="code"></div>
     </main>
-    <footer>
-      <p>
-      Foundational study of the Mutation Game on simple graphs
-      for the Dynamics on Graphs lecture of Norman J Wildberger, PHD
-      </p>
-      <a href="https://github.com/geometor/graphs" target="_blank">source</a>
-    </footer>
   </body>
 </html>

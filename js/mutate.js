@@ -32,15 +32,18 @@ function sRandom() {
   let g = graphs[G]
   keys = Object.keys(g.V)
   let n = Math.floor((Math.random() * keys.length) + 1) - 1
-  v = g.V[keys[n]]
+  let k = keys[n]
 
-  s(v)
+  s(k)
 }
 
 // mutation function
 // parameter
 // v = vertex
-function s(v) {
+function s(k) {
+  let g = graphs[G]
+  console.log(k)
+  let v = g.V[k]
   v.value = -v.value
   v.value += v.N.reduce(sumValue, 0)
   populations.push(p())

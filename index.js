@@ -39,8 +39,9 @@ function run() {
         sRandom()
         break;
       case "round":
-        let k = gKeys[(i + 1) % gKeys.length]
-        s(g.V[k])
+        let n = ((i + 1) % gKeys.length)
+        let k = gKeys[n]
+        s(k)
         break;
     }
   }

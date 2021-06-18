@@ -1,4 +1,4 @@
-# Dynamics on Graphs Explorer
+# Mutation Explorer for Simple Graphs
 
 This repository is currently a sandbox for mathematical investigations into exceptional structures and dynamics on graphs.
 
