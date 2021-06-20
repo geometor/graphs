@@ -1,4 +1,4 @@
-# Mutation Explorer for Simple Graphs
+# Exceptional Structures from Dynamics on Graphs
 
 This repository is currently a sandbox for mathematical investigations into exceptional structures and dynamics on graphs.
 
@@ -8,12 +8,10 @@ The first exercise on the mutation game can be found here:
 
 [DoG 1: The Mutation Game and a foundational exercise / challenge | Explore Research Maths | Wild Egg](https://www.youtube.com/watch?v=u7cUXZHZHEE)
 
-## DoG:1
-### Mutation Explorer for Simple Graphs
+## Mutation Explorer for Simple Graphs
 
-![screenshot DoG1](21.170-mutation-explorer.png "screenshot of Mutation Explorer")
+![screenshot DoG1](21.170-mutation-explorer.jpg "screenshot of Mutation Explorer")
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dbRanLgp65c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In the video linked above, Dr. Wildberger discusses the mutation game on graphs and presents the following exercise / challenge:
 
