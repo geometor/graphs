@@ -10,7 +10,7 @@ The first exercise on the mutation game can be found here:
 
 ## Mutation Explorer for Simple Graphs
 
-![screenshot DoG1](21.170-mutation-explorer.jpg "screenshot of Mutation Explorer")
+![screenshot Mutation Explorer](21.170-mutation-explorer.jpg "screenshot of Mutation Explorer")
 
 
 In the video linked above, Dr. Wildberger discusses the mutation game on graphs and presents the following exercise / challenge:
