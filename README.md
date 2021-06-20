@@ -11,7 +11,9 @@ The first exercise on the mutation game can be found here:
 ## DoG:1
 ### Mutation Explorer for Simple Graphs
 
-![screenshot DoG1](DoG-01-E6.png "screenshot of DoG1")
+![screenshot DoG1](21.170-mutation-explorer.png "screenshot of Mutation Explorer")
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dbRanLgp65c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In the video linked above, Dr. Wildberger discusses the mutation game on graphs and presents the following exercise / challenge:
 
