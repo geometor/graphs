@@ -25,6 +25,9 @@ This first project presents a test rig for playing the mutation game on selected
 
 [Play the mutation game](https://geometor.github.io/graphs/)
 
+Or watch the video here:
+[![21.170 • mutating exceptional structures](https://img.youtube.com/vi/dbRanLgp65c/0.jpg)](https://youtu.be/dbRanLgp65c)
+
 I have built a test rig using HTML, CSS, JS. And I have included one library: [D3](https://d3js.org/) 
 
 D3 is handling the rendering of the graph (upper-left), the population history table (lower-left), and the population history plot (upper-right).
