@@ -1,5 +1,7 @@
 /**
  * render graph definition in code block
+ *
+ * @param {string} pid - css selector for parent element
  */
 function Code(pid) {
   let g = graphs[G]

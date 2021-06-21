@@ -25,14 +25,18 @@ function run() {
   var gKeys = Object.keys(g.V)
   gKeys.forEach ( key => g.V[key].value = 0)
   g.V[gKeys[0]].value = 1    
+  
   // reset population
   populations = []
   populations.push(p())
   
+  //render graph
   let graph = new Graph("#graph")
 
   let mode = d3.select("#mode").node().value
   let cycles = d3.select("#cycles").node().value
+
+  //run the game for number of cycles
   for(var i=0; i < cycles; i++) {
     switch (mode) {
       case "random":
